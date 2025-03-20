@@ -4,9 +4,10 @@ import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
 import DarkModeToggle from './DarkModeToggle'
+import LogoutButton from './LogoutButton'
 
 const Header = () => {
-  const user = null;
+  const user = 1;
   return (
     <div className='relative flex h-24 w-full items-center justify-between bg-popover px-3 sm:px-8' style={{
       boxShadow: shadow
@@ -26,13 +27,13 @@ const Header = () => {
 
       <div className='flex gap-4'>
         {user ? (
-          "Logout"
+          <LogoutButton />
         ) : 
         (
           <>
           
           <Button asChild>
-            <Link href="/sing-up" className='hidden sm:block'>Sign Up</Link>
+            <Link href="/sign-up" className='hidden sm:block'>Sign Up</Link>
           </Button>
           <Button asChild variant="outline">
             <Link href="/login">Login</Link>

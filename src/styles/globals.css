@@ -76,6 +76,14 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --toaster-success-bg: #047857; /* Changed to use the border color */
+  --toaster-success-border: #047857;
+  --toaster-success-text: #ffffff; /* Changed to white for better contrast */
+  --toaster-description-text: #f0fff4; /* Lighter color for description */
+  --toaster-error-bg: #B91C1C; /* Adding error toast variables */
+  --toaster-error-border: #B91C1C;
+  --toaster-error-text: #ffffff;
+  --toaster-error-description-text: #fff5f5;
 }
 
 .dark {
@@ -119,4 +127,25 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.success {
+  background-color: var(--toaster-success-bg) !important;
+  border: 1px solid var(--toaster-success-border) !important;
+  color: var(--toaster-success-text) !important;
+}
+
+.success [data-description] {
+  color: var(--toaster-description-text) !important;
+}
+
+.error {
+  background-color: var(--toaster-error-bg) !important;
+  border: 1px solid var(--toaster-error-border) !important;
+  color: var(--toaster-error-text) !important;
+}
+
+.error [data-description] {
+  color: var(--toaster-error-description-text) !important;
 }
