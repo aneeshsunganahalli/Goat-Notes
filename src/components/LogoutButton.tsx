@@ -14,7 +14,7 @@ function LogoutButton() {
     setLoading(true)
 
     await new Promise((resolve) => setTimeout(resolve,2000))
-    const errorMessage = "error"
+    const errorMessage = null
 
     if (!errorMessage){
       toast("Logged Out", { 
