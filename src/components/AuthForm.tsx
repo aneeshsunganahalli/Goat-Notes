@@ -76,7 +76,7 @@ function AuthForm({ type }: Props) {
             id='password'
             name='password'
             placeholder='Enter your password'
-            type='email'
+            type='password'
             required
             disabled={isPending}
           />
