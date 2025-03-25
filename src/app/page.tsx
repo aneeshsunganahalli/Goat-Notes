@@ -4,7 +4,6 @@ import NewNoteButton from '@/components/NewNoteButton';
 import NoteTextInput from '@/components/NoteTextInput';
 import { prisma } from '@/db/prisma';
 import React from 'react'
-import { redirect } from 'next/navigation';
 
 type Props = {
   searchParams: Promise<{[key: string]: string | string[] | undefined}>
@@ -19,10 +18,6 @@ const HomePage = async ({searchParams}: Props) => {
    ? noteIdParam![0] 
    : noteIdParam || "";
 
-   if (!noteId) {
-    redirect('/');
-  }
-
    const note = await prisma.note.findUnique({
     where: {
       id: noteId,
@@ -30,9 +25,6 @@ const HomePage = async ({searchParams}: Props) => {
     }}
   )
   
-  if (!noteId) {
-    redirect('/');
-  }
 
   return (
     <div className='flex h-full flex-col items-center gap-4'>
