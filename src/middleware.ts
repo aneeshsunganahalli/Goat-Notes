@@ -66,7 +66,7 @@ export async function updateSession(request: NextRequest) {
         return NextResponse.redirect(url)
       } else {
         const {noteId} = await fetch(
-          `${process.env.Next_PUBLIC_BASE_URL}/api/create-new-note?userId=${user.id}`, {
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/create-new-note?userId=${user.id}`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
