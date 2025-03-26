@@ -41,7 +41,7 @@ function NewNoteButton({user}: Props) {
     onClick={handleClickNewNoteButton}
     variant="secondary"
     disabled={loading}
-    className='w-24'
+    className='w-24 bg-emerald-500 rounded-2xl'
     >
       {loading ? <Loader2 className='animate-spin' />: "New Note" }
     </Button>
