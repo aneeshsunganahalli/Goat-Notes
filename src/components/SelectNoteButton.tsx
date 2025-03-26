@@ -11,15 +11,15 @@ type Props = {
   note: Note;
 }
 
-function SelectNoteButton({note}: Props) {
+function SelectNoteButton({ note }: Props) {
   const noteId = useSearchParams().get("noteId") || ""
 
-  const {noteText: selectedNoteText} = useNote();
+  const { noteText: selectedNoteText } = useNote();
   const [localNoteText, setLocalNoteText] = React.useState(note.text)
   const [shouldUseGlobalNoteText, setShouldUseGlobalNoteText] = React.useState(false)
 
   useEffect(() => {
-    if ( noteId === note.id) {
+    if (noteId === note.id) {
       setShouldUseGlobalNoteText(true)
     } else {
       setShouldUseGlobalNoteText(false)
@@ -43,7 +43,9 @@ function SelectNoteButton({note}: Props) {
         <p className='w-full overflow-hidden truncate text-ellipsis whitespace-nowrap'>
           {noteText}
         </p>
-        <p className='text-xs text-muted-foreground'>{note.updatedAt.toLocaleDateString()}</p>
+        <p className='text-xs text-muted-foreground'>
+          {note.updatedAt.getDate()}/{note.updatedAt.getMonth() + 1}/{note.updatedAt.getFullYear()}
+        </p>
       </Link>
     </SidebarMenuButton>
   )
